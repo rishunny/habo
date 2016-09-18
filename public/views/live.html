@@ -1,0 +1,57 @@
+
+
+  <div class="mainContainer" md-theme="theme4">
+
+    <!-- MENU HORIZONTAL -->
+   <md-toolbar class="md-primary md-hue-2" ng-if="menu_type === 'horizontal'">
+
+    <md-menu-bar>
+      <!-- <md-button class="md-accent">
+        <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+      </md-button> -->
+      <horiz-menu ng-repeat="info in menu_items" item-data="info"></horiz-menu>
+    </md-menu-bar>
+    </md-toolbar>
+
+
+    <!-- MENU VERTIVAL  -->
+    <md-button ng-click="toggleLeft()" class="md-primary" ng-if="menu_type === 'vertical'">
+      <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+    </md-button>
+
+    <md-sidenav ng-if="menu_type === 'vertical'"
+    class="md-sidenav-left"
+    md-component-id="left"
+    md-whiteframe="2"
+    layout-xs
+    >
+
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Menu</h1>
+      </md-toolbar>
+      <md-list>
+        <md-item layout="column" ng-repeat="info in menu_items">
+          <vert-menu item-data="info"></vert-menu>
+        </md-item>
+      </md-list>
+
+    </md-sidenav>
+
+
+<!-- Header  -->
+<div class="header" style="background-image: url({{mainImage}})" layout="row" layout-align="center start">
+  <h2 ng-if="mainTitle" >
+    {{mainTitle}}
+  </h2>
+</div>
+
+<!-- CARD implementation  -->
+<md-content class="md-padding" ng-if="img_cards.length != 0">
+  <!-- <h2>Posts</h2>
+  <hr /> -->
+  <div layout-wrap layout-xs="column" layout-margin layout="row" layout-align="center start">
+    <custom-card ng-repeat="info in img_cards" card-data="info"></custom-card>
+  </div>
+</md-content>
+
+</div>

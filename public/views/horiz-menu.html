@@ -1,0 +1,28 @@
+
+<md-menu ng-if="itemData.class === 'menu'" md-offset="{{itemData.offset.x}} {{itemData.offset.y}}">
+
+  <md-button class="md-primary md-hue-3" md-menu-origin ng-click="$mdOpenMenu()">
+      {{itemData.name}}
+  </md-button>
+
+  <!-- <md-menu-item ng-switch="itemData.level === 'child'">
+    <md-button md-menu-origin ng-click="$mdOpenMenu()">
+        {{itemData.name}}
+    </md-button>
+  </md-menu-item> -->
+
+    <md-menu-content width="3">
+      <horiz-menu ng-repeat="items in itemData.array" item-data="items"></horiz-menu>
+      <md-menu-item ng-if="itemData.array.length === 0">
+        <md-button class="md-primary md-hue-3" md-menu-align-target> </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+
+<md-button class="md-primary md-hue-3" class="linkButton" ng-if="(itemData.class === 'link') && (itemData.level === 'root')" md-nav-href="#">{{itemData.name}}</md-button>
+
+<md-menu-item ng-if="(itemData.class === 'link') && (itemData.level === 'child')">
+  <md-button class="md-primary md-hue-3" md-menu-align-target md-nav-href="#">
+    {{itemData.name}}
+  </md-button>
+</md-menu-item>

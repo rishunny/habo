@@ -1,0 +1,218 @@
+/*
+Styles for Menus
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+}
+
+
+/* Input form styles */
+
+.mainContainer{
+  position: relative;
+  min-height:100%;
+}
+
+.inputArea{
+  position: fixed;
+  bottom: 0px;
+  right: 0%;
+}
+
+.inputArea form{
+  width: 350px;
+
+}
+
+.inputArea md-content{
+  height: 300px;
+  width: 350px;
+  right: 0%;
+}
+
+.inputArea md-content span{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.user{
+  background-color: #00796b;
+}
+
+.bot{
+  background-color: #000;
+}
+
+.inputArea md-toolbar {
+  min-height: 30px;
+  /*background-color: #00796b;*/
+  cursor: pointer;
+}
+
+md-toolbar.inputArrHidden {
+  min-height: 30px;
+  width: 350px;
+  /*background-color: #00796b;*/
+  position: absolute;
+  bottom: 0px;
+  right: 0%;
+}
+
+custom-card {
+  width:300px;
+}
+
+div.fab {
+    width: 80px;
+    position: fixed;
+    bottom: 40px;
+    right: 45%;
+}
+
+/* Voice recording circular progress element style */
+
+
+ .pulse::before, .pulse:after{ /* shared style for two circles */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 45px; /* width of outer circle */
+	height: 45px; /* height of outer circle */
+	border: 10px double white; /* style and color of circles */
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+
+ .pulse:after{ /* inner circle specific CSS */
+	width: 60px; /* width of inner circle */
+	height: 60px; /* width of inner circle */
+	border-width: 6px;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+	transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+
+.pulse:before, .pulse:after{
+	-webkit-animation: pulsate 1.2s infinite; /* animation name duration loop etc */
+	-moz-animation: pulsate 1.2s infinite;
+	-ms-animation: pulsate 1.2s infinite;
+	animation: pulsate 1.2s infinite;
+}
+
+/* ### Keyframe animations ### */
+
+@-webkit-keyframes pulsate{
+
+  30%{
+	opacity: 1;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+
+	100%{
+	opacity: 0.3;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
+	}
+
+}
+
+.selected {
+  border-width: 5px !important;
+  border-color: #e6ee9c !important;
+  border-style: solid !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
+
+.header{
+  width: 100%;
+  /*position: absolute;*/
+  /*padding-bottom: 1%;*/
+  padding-top: 10%;
+  padding-bottom: 100px;
+  overflow-y: hidden ! important;
+  overflow-x: hidden ! important;
+  /*background-image: url("assets/img/header_bg2.jpg");*/
+  background-color: white;
+  background-size: 100%;
+  /*background-position: 55% 7%;*/
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.header h2{
+  /*position: relative;*/
+  /*bottom: 40%;*/
+  /*align-self: center;*/
+  color: white;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 7vw;
+  /*padding-bottom: 100px;*/
+}
+
+md-content h2{
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 2vw;
+  color:black;
+}
+
+md-content hr {
+  position: relative;
+  left:3%;
+  width:30%;
+}
+
+
+/* login page CSS */
+.loginPage{
+  height: 100%;
+  margin: 0;
+  background: #8DA7BE;
+}
+
+.loginPage .WelcomeMessage{
+  position: absolute;
+  top:10%;
+  left:43%;
+  text-align: center;
+}
+
+.loginPage .WelcomeMessage h1{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2vw;
+}
+
+.loginPage .logincontent{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
+
+.loginPage .signupContent{
+  position: absolute;
+  top: 15%;
+  left: 23%;
+}
+
+.loginPage .signupBox{
+  max-width:  90%;
+  width: 700px
+}
+
+.loginPage .loginBox {
+  max-width:  90%;
+  width: 500px
+}

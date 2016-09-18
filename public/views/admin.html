@@ -1,0 +1,126 @@
+
+
+  <div class="mainContainer" md-theme="theme4" ng-class="{'selected': selectedElem.type == 'rootcontainer'}">
+
+    <!-- MENU HORIZONTAL -->
+   <md-toolbar class="md-primary md-hue-2" ng-class="{'selected': selectedElem.type == 'menunav'}" ng-if="menu_type === 'horizontal'">
+
+    <md-menu-bar >
+      <!-- <md-button class="md-accent">
+        <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+      </md-button> -->
+      <horiz-menu ng-repeat="info in menu_items" item-data="info"></horiz-menu>
+    </md-menu-bar>
+    </md-toolbar>
+
+
+    <!-- MENU VERTIVAL  -->
+    <md-button ng-click="toggleLeft()" class="md-primary" ng-if="menu_type === 'vertical'">
+      <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+    </md-button>
+
+    <md-sidenav ng-class="{'selected': selectedElem.type == 'menunav'}" ng-if="menu_type === 'vertical'"
+    class="md-sidenav-left"
+    md-component-id="left"
+    md-whiteframe="2"
+    layout-xs
+    >
+
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Menu</h1>
+      </md-toolbar>
+      <md-list>
+        <md-item layout="column" ng-repeat="info in menu_items">
+          <vert-menu item-data="info"></vert-menu>
+        </md-item>
+      </md-list>
+
+    </md-sidenav>
+
+
+<!-- Header  -->
+<div class="header" style="background-image: url({{mainImage}})" layout="row" layout-align="center start">
+  <h2 ng-if="mainTitle" >
+    {{mainTitle}}
+  </h2>
+</div>
+
+<!-- CARD implementation  -->
+<md-content class="md-padding" ng-if="img_cards.length != 0">
+  <!-- <h2>Posts</h2>
+  <hr /> -->
+  <div layout-wrap layout-xs="column" layout-margin layout="row" layout-align="center start">
+    <custom-card ng-repeat="info in img_cards" card-data="info"></custom-card>
+  </div>
+</md-content>
+
+
+<!-- FORM for customization  -->
+
+<div class="fab">
+  <md-fab-speed-dial
+    md-open="isOpen"
+    ng-mouseover="isOpen=true"
+    ng-mouseleave="isOpen=false"
+    ng-click="preventDefault($event)"
+    md-direction="up"
+    class="md-scale"
+    ng-class="{ 'md-hover-full': true }"
+                          >
+     <md-fab-trigger>
+
+       <md-button md-ink-ripple="#FF0000" aria-label="voice" class="md-fab md-accent md-hue-1" ng-click="RecordVoice()" ng-class="{pulse: togglePulse}">
+         <i class="material-icons">mic</i>
+         <audio> </audio>
+       </md-button>
+
+     </md-fab-trigger>
+
+     <md-fab-actions>
+       <md-button aria-label="message" class="md-fab md-raised md-mini" ng-click="toggleInput()">
+         <i class="material-icons">message</i>
+       </md-button>
+     </md-fab-actions>
+   </md-fab-speed-dial>
+ </div>
+
+<!-- <md-toolbar class="inputArrHidden" md-whiteframe="2" ng-if="hideit">
+  <i class="material-icons" ng-click="toggleInput()">insert_comment</i>
+</md-toolbar> -->
+
+<div class="inputArea" ng-if="!hideit">
+  <md-toolbar md-whiteframe="2" md-ink-ripple="#FF0000">
+    <i class="material-icons" ng-click="toggleInput()">remove</i>
+  </md-toolbar>
+
+  <md-content md-theme="docs-dark" md-whiteframe="1">
+    <md-list ng-repeat="curr_input in inputDataArr">
+      <md-item>
+        <span class="ng-class: curr_input.class">
+          {{curr_input.data}}
+        </span>
+      </md-item>
+    </md-list>
+  </md-content>
+
+  <form md-whiteframe="2" style="background-color: white;">
+    <div layout="row">
+      <!-- <md-input-container class="md-block" flex="20">
+        <label>Action</label>
+        <input type="text" ng-model="userInput.type">
+      </md-input-container> -->
+      <md-input-container class="md-block" flex="70">
+        <label>Sentence</label>
+        <input type="text" ng-model="userInput.data">
+      </md-input-container>
+      <md-input-container class="md-block" flex>
+      <md-button type="submit" ng-click="submitInput(userInput)">
+        <i class="material-icons">send</i>
+      </md-button>
+      </md-input-container>
+    </div>
+
+  </form>
+
+</div>
+</div>

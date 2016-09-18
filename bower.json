@@ -1,0 +1,20 @@
+{
+  "name": "habo",
+  "version": "1.0.0",
+  "authors": [
+    "iprangishvili",
+    "rishunny"
+  ],
+  "description": "heuristic application for building objects",
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "angular-material": "~1.1.1",
+    "ngstorage": "~0.3.11",
+    "recordrtc": "~5.4.0",
+    "angular-socket-io": "~0.7.0",
+    "angularfire": "~2.0.2",
+    "ui-router": "~0.3.1",
+    "angular-route": "~1.5.8"
+  }
+}

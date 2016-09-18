@@ -1,0 +1,17 @@
+<md-card ng-class="{'selected': $index === selectedElem.element}">
+  <img ng-src="{{info.img}}" class="md-card-image">
+  <div my-youtube code="{{info.video}}"></div>
+  <md-card-title ng-if="info.title">
+    <md-card-title-text>
+      <span class="md-headline">{{info.title}}</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content ng-if="info.content">
+    <p>
+      {{info.content}}
+    </p>
+  </md-card-content>
+  <md-card-actions ng-if="info.buttons.length != 0" layout="row" layout-align="end center">
+    <md-button ng-repeat="b in info.buttons">{{b.name}}</md-button>
+  </md-card-actions>
+</md-card>

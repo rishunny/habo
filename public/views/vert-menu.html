@@ -1,0 +1,32 @@
+
+  <md-menu ng-if="itemData.class === 'menu'" md-offset="80 0">
+
+    <md-menu-item>
+      <md-button class="md-primary md-hue-3" md-menu-origin ng-click="$mdOpenMenu()">
+          {{itemData.name}}
+      </md-button>
+    </md-menu-item>
+
+      <!-- <md-item-content md-ink-ripple layout="row" layout-align="start center" ng-click="$mdOpenMenu()">
+        <div class="inset">{{itemData.name}}
+        </div>
+      </md-item-content> -->
+
+      <md-menu-content width="3">
+        <vert-menu ng-repeat="items in itemData.array" item-data="items"></vert-menu>
+        <md-menu-item ng-if="itemData.array.length === 0">
+          <md-button> </md-button>
+        </md-menu-item>
+      </md-menu-content>
+  </md-menu>
+
+  <md-menu-item ng-if="(itemData.class === 'link') && (itemData.level === 'child')">
+    <md-button class="md-primary md-hue-3" md-nav-href="#">
+      {{itemData.name}}
+    </md-button>
+  </md-menu-item>
+
+  <md-item-content class="md-primary md-hue-3" md-ink-ripple layout="row" layout-align="start center" ng-if="(itemData.class === 'link') && (itemData.level === 'root')">
+    <div class="inset">{{itemData.name}}
+    </div>
+  </md-item-content>
